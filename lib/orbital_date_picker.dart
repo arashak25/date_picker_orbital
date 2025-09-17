@@ -87,8 +87,8 @@ class _DatePickerState extends State<DatePicker> {
   int? toDay;
   bool hasToDate = false;
 
-  // Global key to access the OrbitalDatePicker state.
-  final orbitalKey = GlobalKey<_OrbitalDatePickerState>();
+  // Global key to access the DatePickerOrbital state.
+  final orbitalKey = GlobalKey<_DatePickerOrbitalState>();
 
   @override
   Widget build(BuildContext context) {
@@ -286,7 +286,7 @@ class _DatePickerState extends State<DatePicker> {
                     ),
                   // Orbital date picker UI if enabled.
                   if (widget.showOrbital)
-                    OrbitalDatePicker(
+                    DatePickerOrbital(
                       key: orbitalKey,
                       size: MediaQuery.of(context).size.width * 0.6,
                       initialDate: DateTime(
@@ -658,13 +658,13 @@ class _PickerWidgetState extends State<_PickerWidget> {
   }
 }
 
-// OrbitalDatePicker widget, providing an animated orbital UI for date selection.
-class OrbitalDatePicker extends StatefulWidget {
+// DatePickerOrbital widget, providing an animated orbital UI for date selection.
+class DatePickerOrbital extends StatefulWidget {
   final DateTime initialDate;
   final ValueChanged<DateTime> onDateChanged;
   final double size;
 
-  const OrbitalDatePicker({
+  const DatePickerOrbital({
     super.key,
     required this.initialDate,
     required this.onDateChanged,
@@ -672,10 +672,10 @@ class OrbitalDatePicker extends StatefulWidget {
   });
 
   @override
-  State<OrbitalDatePicker> createState() => _OrbitalDatePickerState();
+  State<DatePickerOrbital> createState() => _DatePickerOrbitalState();
 }
 
-class _OrbitalDatePickerState extends State<OrbitalDatePicker>
+class _DatePickerOrbitalState extends State<DatePickerOrbital>
     with SingleTickerProviderStateMixin {
   late DateTime _selectedDate;
   late int _baseYear;
