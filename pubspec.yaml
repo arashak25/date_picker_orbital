@@ -1,4 +1,4 @@
-name: orbital_date_picker
+name: date_picker_orbital
 description: "A customizable Flutter date picker with an orbital UI for selecting date ranges."
 version: 0.0.1
 homepage: https://github.com/arashak25/date_picker_orbital
